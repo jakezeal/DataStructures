@@ -12,6 +12,13 @@ def decode(str_num, base):
     assert 2 <= base <= 36
     # TODO: Decode number
 
+    # if base == 2:
+        # for i in str_num:
+        #     if i % 2 == 0:
+
+    return int(str_num, base)
+
+
 def encode(num, base):
     """
     Encode given number from base 10 to given base.
@@ -20,6 +27,8 @@ def encode(num, base):
     """
     assert 2 <= base <= 36
     # TODO: Encode number
+
+
 
 def convert(str_num, base1, base2):
     """
