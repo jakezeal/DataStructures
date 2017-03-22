@@ -11,12 +11,16 @@ def decode(str_num, base):
     """
     assert 2 <= base <= 36
     # TODO: Decode number
-
-    # if base == 2:
-        # for i in str_num:
-        #     if i % 2 == 0:
-
-    return int(str_num, base)
+    reversed_str = str_num[::-1]
+    total = 0
+    for i in range(0, len(reversed_str)):
+        if reversed_str[i] != '0':
+            num_to_add = 0
+            if reversed_str[i].isalpha():
+                # TODO: DOESN'T WORK for caps vs not - only lowercase
+                # num_to_add = ord(reversed_str[i]) - 86
+            total += base**i * int(reversed_str[i])
+    return total
 
 
 def encode(num, base):
@@ -27,7 +31,29 @@ def encode(num, base):
     """
     assert 2 <= base <= 36
     # TODO: Encode number
+    # if num % 2 ==
 
+    # digs = string.digits + string.letters
+    # if num < 0:
+    #     sign = -1
+    # elif num == 0:
+    #     return digs[0]
+    # else:
+    #     sign = 1
+    #
+    # x *= sign
+    # digits = []
+    #
+    # while x:
+    #     digits.append(digs[x % base])
+    #     x /= base
+    #
+    # if sign < 0:
+    #     digits.append('-')
+    #
+    # digits.reverse()
+    #
+    # return ''.join(digits)
 
 
 def convert(str_num, base1, base2):
