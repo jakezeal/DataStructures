@@ -11,16 +11,29 @@ def decode(str_num, base):
     """
     assert 2 <= base <= 36
     # TODO: Decode number
+    # Could also take length of string - decrementer
+    # Have reversed_str be a list for str in reversed_str
+
+    # Reverse str_num to make it easier to loop through
     reversed_str = str_num[::-1]
-    total = 0
+    # Stores the result value
+    result = 0
+    # Number to add if it is alphaneumeric
+    num_to_add = 0
+    # Iterate getting index in reversed_str
     for i in range(0, len(reversed_str)):
+        # If string at index is not 0
         if reversed_str[i] != '0':
-            num_to_add = 0
+
             if reversed_str[i].isalpha():
                 # TODO: DOESN'T WORK for caps vs not - only lowercase
-                # num_to_add = ord(reversed_str[i]) - 86
-            total += base**i * int(reversed_str[i])
-    return total
+                num_to_add = ord(reversed_str[i]) - 87
+                print(num_to_add, reversed_str[i])
+                result += base**i * num_to_add + num_to_add
+
+            else:
+                result += base**i * int(reversed_str[i]) + num_to_add
+    return result
 
 
 def encode(num, base):
@@ -31,29 +44,6 @@ def encode(num, base):
     """
     assert 2 <= base <= 36
     # TODO: Encode number
-    # if num % 2 ==
-
-    # digs = string.digits + string.letters
-    # if num < 0:
-    #     sign = -1
-    # elif num == 0:
-    #     return digs[0]
-    # else:
-    #     sign = 1
-    #
-    # x *= sign
-    # digits = []
-    #
-    # while x:
-    #     digits.append(digs[x % base])
-    #     x /= base
-    #
-    # if sign < 0:
-    #     digits.append('-')
-    #
-    # digits.reverse()
-    #
-    # return ''.join(digits)
 
 
 def convert(str_num, base1, base2):
@@ -63,7 +53,9 @@ def convert(str_num, base1, base2):
     assert 2 <= base1 <= 36
     assert 2 <= base2 <= 36
     # TODO: Convert number
-
+    # base_ten = decode(str_num, base1)
+    # converted_base = encode(base1, base2)
+    # return converted_base
 
 def main():
     import sys
@@ -80,3 +72,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    
