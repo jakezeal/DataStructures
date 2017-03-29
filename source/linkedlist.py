@@ -76,6 +76,13 @@ class LinkedList(object):
             raise ValueError('List index out of range: {}'.format(index))
         # TODO: Find the node at the given index and return the node's data
 
+
+        # for index, value in enumerate(array):
+        #     if item == value:
+        #         return index  # found
+        # return None
+
+
     def insert_at_index(self, index, item):
         """Insert the given item at the given index in this linked list, or
         raise ValueError if the given index is out of range of the list size"""
@@ -97,6 +104,7 @@ class LinkedList(object):
             self.tail.next = new_node
         # Update tail to new node regardless
         self.tail = new_node
+        self.size += 1
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list"""
@@ -111,6 +119,7 @@ class LinkedList(object):
             new_node.next = self.head
         # Update head to new node regardless
         self.head = new_node
+        self.size -= 1
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError"""
