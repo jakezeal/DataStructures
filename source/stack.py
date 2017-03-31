@@ -68,7 +68,10 @@ class ArrayStack(object):
 
     def is_empty(self):
         """Return True if this stack is empty, or False otherwise"""
-        return self.list.is_empty()
+        if len(self.list) == 0:
+            return True
+        else:
+            return False
 
     def length(self):
         """Return the number of items in this stack"""
@@ -98,5 +101,5 @@ class ArrayStack(object):
 
 # implement LinkedStack and ArrayStack above, then change the assignment below
 # to use each of your Stack implementations to verify they each pass all tests
-Stack = LinkedStack
-# Stack = ArrayStack
+# Stack = LinkedStack
+Stack = ArrayStack
