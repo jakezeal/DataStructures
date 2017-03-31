@@ -76,7 +76,7 @@ class ArrayStack(object):
 
     def push(self, item):
         """Insert the given item on the top of this stack"""
-        self.list.prepend(item)
+        self.list.append(item)
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
@@ -84,7 +84,7 @@ class ArrayStack(object):
         if self.is_empty():
             return None
         else:
-            return self.list[0]
+            return self.list[len(self.list)]
 
     def pop(self):
         """Remove and return the item on the top of this stack,
@@ -92,8 +92,8 @@ class ArrayStack(object):
         if self.is_empty():
             raise ValueError('List is empty')
         else:
-            item = self.list[0]
-            self.list.remove(self.list[0])
+            item = self.list[len(self.list)]
+            self.list.remove(self.list[len(self.list)])
             return item
 
 # implement LinkedStack and ArrayStack above, then change the assignment below
