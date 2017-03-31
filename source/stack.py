@@ -29,7 +29,7 @@ class LinkedStack(object):
 
     def push(self, item):
         """Insert the given item on the top of this stack"""
-        self.list.append(item)
+        self.list.prepend(item)
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
@@ -37,7 +37,7 @@ class LinkedStack(object):
         if self.is_empty():
             return None
         else:
-            return self.list.tail.data
+            return self.list.head.data
 
     def pop(self):
         """Remove and return the item on the top of this stack,
@@ -45,7 +45,7 @@ class LinkedStack(object):
         if self.is_empty():
             raise ValueError('List is empty')
         else:
-            return self.list.delete(self.list.tail.data)
+            return self.list.delete(self.list.head.data)
 
 
 # implement ArrayStack below, then change the assignment at the bottom
@@ -74,7 +74,7 @@ class ArrayStack(object):
 
     def push(self, item):
         """Insert the given item on the top of this stack"""
-        self.list.append(item)
+        self.list.prepend(item)
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
@@ -82,7 +82,7 @@ class ArrayStack(object):
         if self.is_empty():
             return None
         else:
-            return self.list.tail.data
+            return self.list[0]
 
     def pop(self):
         """Remove and return the item on the top of this stack,
@@ -90,7 +90,7 @@ class ArrayStack(object):
         if self.is_empty():
             raise ValueError('List is empty')
         else:
-            return self.list.delete(self.list.tail.data)
+            return self.list.remove(self.list[0])
 
 
 # implement LinkedStack and ArrayStack above, then change the assignment below
