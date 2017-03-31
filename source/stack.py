@@ -45,7 +45,9 @@ class LinkedStack(object):
         if self.is_empty():
             raise ValueError('List is empty')
         else:
-            return self.list.delete(self.list.head.data)
+            head = self.list.head.data
+            self.list.delete(self.list.head.data)
+            return head
 
 
 # implement ArrayStack below, then change the assignment at the bottom
@@ -90,8 +92,9 @@ class ArrayStack(object):
         if self.is_empty():
             raise ValueError('List is empty')
         else:
-            return self.list.remove(self.list[0])
-
+            item = self.list[0]
+            self.list.remove(self.list[0])
+            return item
 
 # implement LinkedStack and ArrayStack above, then change the assignment below
 # to use each of your Stack implementations to verify they each pass all tests
