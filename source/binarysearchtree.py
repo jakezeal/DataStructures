@@ -14,21 +14,19 @@ class BinaryNode(object):
 
     def is_leaf(self):
         """Return True if this node is a leaf (has no children)"""
-        # TODO: Check if both left child and right child have no value
-        return ... and ...
+        return self.left is None and self.right is None
 
     def is_internal(self):
         """Return True if this node is internal (has at least one child)"""
-        # TODO: Check if either left child or right child has a value
-        return ... or ...
+        return self.left is not None or self.right is not None
 
     def height(self):
         """Return the number of edges on the longest downward path from this
         node to a descendant leaf node"""
         # TODO: Check if left child has a value and if so calculate its height
-        left_height = ... if self.left is not None else -1
+        left_height = self.left.height() if self.left is not None else -1
         # TODO: Check if right child has a value and if so calculate its height
-        right_height = ... if self.right is not None else -1
+        right_height = self.right.height() if self.right is not None else -1
         # Return one more than the greater of the left height and right height
         return 1 + max(left_height, right_height)
 
