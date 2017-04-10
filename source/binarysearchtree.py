@@ -67,7 +67,7 @@ class BinarySearchTree(object):
         # Find a node with the given item, if any
         node = self._find_node(item)
         # TODO: Return the node's data if found, or None
-        return node.data if item == node.data else None
+        return node.data if node is not None else None
 
     def _find_node(self, item):
         """Return the node containing the given item in this binary search tree,
