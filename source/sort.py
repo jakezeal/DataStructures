@@ -18,14 +18,25 @@ def bubble_sort(alist):
 
 
 def selection_sort(alist):
+    # Brings smallest element to the left
     # Time complexity
-    # Worst Case: O(n^2) but twice as fast as bubble_sort -> O(n^2 / 2)
-    # Best Case: Omega(n^2) but still twice as fast as bubble_sort -> O(n^2 / 2)
+    # Worst Case: O(n^2) -> O(n^2 / 2)
+    # Best Case: Omega(n^2) -> O(n^2 / 2)
     # Space complexity
     # Beta(1) - Constant
-
+    # ------------------
     #variable for minimum index element
     # swap
+
+
+def insertion_sort(alist):
+    # Brings smallest element to the left
+    # Time complexity
+    # Worst Case: O(n^2) -> O(n^2 / 2)
+    # Best Case: Omega(n)
+    # Space complexity
+    # Beta(1) - Constant
+    # ------------------
 
 
 if __name__ == '__main__':
