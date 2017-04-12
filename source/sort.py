@@ -2,6 +2,10 @@
 
 
 def bubble_sort(alist):
+    # Time complexity
+    # Worst Case: O(n^2) - Quadratic | Best Case: Omega(n) - Linear
+    # Space complexity
+    # Beta(1) - Constant
     is_sorted = False
     while is_sorted is False:
         is_sorted = True
@@ -12,8 +16,10 @@ def bubble_sort(alist):
     return alist
 
 
+
+
 if __name__ == '__main__':
-    list1 = [6, 1, 4, 2, 3, 8, 0]
-    print(list1)
-    new_list = bubble_sort(list1)
+    alist = [6, 1, 4, 2, 3, 8, 0]
+    print(alist)
+    new_list = bubble_sort(alist)
     print(new_list)
