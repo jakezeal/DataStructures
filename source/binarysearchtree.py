@@ -14,6 +14,7 @@ class BinaryNode(object):
 
     def is_leaf(self):
         """Return True if this node is a leaf (has no children)"""
+        # Worse case to get a leaf is logn
         return self.left is None and self.right is None
 
     def is_internal(self):
@@ -148,12 +149,14 @@ class BinarySearchTree(object):
             node = self.root
         if items is None:
             items = list()
-        # TODO: Traverse left subtree, if it exists
-        ...
-        # TODO: Add this node's data to the items list
-        ...
-        # TODO: Traverse right subtree, if it exists
-        ...
+        if node.left is not None:
+            # TODO: Traverse left subtree, if it exists
+            self.items_in_order(node.left, items)
+            # TODO: Add this node's data to the items list
+            items.append(node.data)
+        # if n:
+            # TODO: Traverse right subtree, if it exists
+        self.items_in_order(node.right, items)
         # Return the items list to the original caller
         return items
 
@@ -165,13 +168,13 @@ class BinarySearchTree(object):
             node = self.root
         if items is None:
             items = list()
-        # TODO: Add this node's data to the items list
-        ...
-        # TODO: Traverse left subtree, if it exists
-        ...
-        # TODO: Traverse right subtree, if it exists
-        ...
-        # Return the items list to the original caller
+        # # TODO: Add this node's data to the items list
+        # ...
+        # # TODO: Traverse left subtree, if it exists
+        # ...
+        # # TODO: Traverse right subtree, if it exists
+        # ...
+        # # Return the items list to the original caller
         return items
 
     def items_post_order(self, node=None, items=None):
@@ -182,38 +185,38 @@ class BinarySearchTree(object):
             node = self.root
         if items is None:
             items = list()
-        # TODO: Traverse left subtree, if it exists
-        ...
-        # TODO: Traverse right subtree, if it exists
-        ...
-        # TODO: Add this node's data to the items list
-        ...
-        # Return the items list to the original caller
+        # # TODO: Traverse left subtree, if it exists
+        # ...
+        # # TODO: Traverse right subtree, if it exists
+        # ...
+        # # TODO: Add this node's data to the items list
+        # ...
+        # # Return the items list to the original caller
         return items
 
     def items_level_order(self):
         """Return a list of all items in this binary search tree found using
         level-order traversal"""
-        # TODO: Create a queue to store nodes not yet traversed in level-order
-        queue = ...
-        # Create an items list
-        items = list()
-        # TODO: Enqueue the root node if this tree is not empty
-        if ...:
-            queue...
-        # TODO: Loop until the queue is empty
-        while ...:
-            # TODO: Dequeue the node at the front of the queue
-            node = ...
-            # TODO: Add this node's data to the items list
-            ...
-            # TODO: Enqueue this node's left child if it exists
-            if ...:
-                ...
-            # TODO: Enqueue this node's right child if it exists
-            if ...:
-                ...
-        # Return the items list
+        # # TODO: Create a queue to store nodes not yet traversed in level-order
+        # queue = ...
+        # # Create an items list
+        # items = list()
+        # # TODO: Enqueue the root node if this tree is not empty
+        # if ...:
+        #     queue...
+        # # TODO: Loop until the queue is empty
+        # while ...:
+        #     # TODO: Dequeue the node at the front of the queue
+        #     node = ...
+        #     # TODO: Add this node's data to the items list
+        #     ...
+        #     # TODO: Enqueue this node's left child if it exists
+        #     if ...:
+        #         ...
+        #     # TODO: Enqueue this node's right child if it exists
+        #     if ...:
+        #         ...
+        # # Return the items list
         return items
 
 
