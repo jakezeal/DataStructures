@@ -3,7 +3,8 @@
 
 def bubble_sort(alist):
     # Time complexity
-    # Worst Case: O(n^2) - Quadratic | Best Case: Omega(n) - Linear
+    # Worst Case: O(n^2) - Quadratic
+    # Best Case: Omega(n) - Linear
     # Space complexity
     # Beta(1) - Constant
     is_sorted = False
@@ -16,6 +17,15 @@ def bubble_sort(alist):
     return alist
 
 
+def selection_sort(alist):
+    # Time complexity
+    # Worst Case: O(n^2) but twice as fast as bubble_sort -> O(n^2 / 2)
+    # Best Case: Omega(n^2) but still twice as fast as bubble_sort -> O(n^2 / 2)
+    # Space complexity
+    # Beta(1) - Constant
+
+    #variable for minimum index element
+    # swap
 
 
 if __name__ == '__main__':
