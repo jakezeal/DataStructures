@@ -81,6 +81,11 @@ class MinHeap(object):
         # TODO: Swap this item with parent item if values are out of order
         parent_index = self._parent_index(index)
         parent_item = self.items[parent_index]
+
+        if item < parent_item:
+            # Swap the items in the array, not local variables
+            self.items[index], self.item[parent_index] = self.parent_item, item
+            self._bubble_up(parent_index)
         ...
         # TODO: Then bubble up again if necessary
         ...
