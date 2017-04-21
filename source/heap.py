@@ -101,6 +101,8 @@ class MinHeap(object):
         child_index = 0
         if right_index > self._last_index() or self.items[left_index] < self.items[right_index]:
             child_index = left_index
+        else:
+            child_index = right_index
         # Swap this item with a child item if values are out of order
         child_item = self.items[child_index]
         if item > child_item:
