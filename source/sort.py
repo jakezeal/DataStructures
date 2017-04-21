@@ -50,6 +50,40 @@ def tree_sort(alist):
     # b = BinarySearchTree(alist)
     # return b
 
+
+def merge_sort(alist):
+
+    # Base case on recursive call
+    # if len(array) <= 1:
+    #     return alist
+
+    middle = len(alist)/2
+    left = alist[:middle]
+    right = alist[middle:]
+
+    #Conquer
+    merge_sort(left)
+    merge_sort(right)
+
+    #Combine
+
+
+
+def merge_sort_recursive(alist):
+
+    # Base case on recursive call
+    if len(alist) <= 1:
+        return alist
+
+    middle = len(alist)/2
+    left = alist[:middle]
+    right = alist[middle:]
+
+    sorted1 = merge_sort_recursive(left)
+    sorted2 = merge_sort_recursive(right)
+    #Conquer
+    
+
 if __name__ == '__main__':
     alist = [6, 1, 4, 2, 3, 8, 0]
     print(alist)
